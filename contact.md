@@ -8,5 +8,5 @@ layout: page
 I am Patty, a: ui/ux designer, front-end developer, game artist, animator, and illustrator.
 {: .-ta-c}
 
-[Download Resume](/Patty-Yau_resume.pdf){:class="btn" target="_blank"}
+[Download Resume](/assets/docs/Patty-Yau_resume.pdf){:class="btn" target="_blank"}
 {: .-ta-c}
