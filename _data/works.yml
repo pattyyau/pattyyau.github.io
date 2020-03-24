@@ -1,0 +1,31 @@
+- title: My OTA
+  url: myota
+  thumb: myota.jpg
+
+- title: Culture
+  url: otacul
+  thumb: otacul.jpg
+
+- title: My OTA (Mobile)
+  url: otaapp
+  thumb: myotaapp.jpg
+
+- title: Otacademy
+  url: otacademy
+  thumb: otac.jpg
+
+- title: Lessons
+  url: lftp
+  thumb: lftp.jpg
+
+- title: Real Estate
+  url: otare
+  thumb: otare.jpg
+
+- title: NCDJ
+  url: ncdj
+  thumb: ncdj.jpg
+
+- title: Who Can Vote?
+  url: wcv
+  thumb: wcv.jpg

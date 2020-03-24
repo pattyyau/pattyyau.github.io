@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+@mixin btn-style {
+  display: inline-block;
+  padding: 0 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &[disabled] { opacity: .5; }
+}
+
+
+@mixin btn-size ($font-size:15, $lines:1, $pad:10) {
+  margin-bottom: $baseline;
+  padding: .7em 2em;
+  font-size: $font-size + px;
+  line-height: 20px * $lines;
+  //line-height: em(($baseline*$lines) - 2,$font-size);
+  @if $font-size > 17 {
+    margin-top: em($baseline*.5,$font-size);
+  }
+}
+
+
+
+.btn {
+  @include btn-style;
+  @include btn-size;
+  color: #fff;
+  background: $accent;
+  border: 0;
+  transition: all .4s;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background: lighten($accent,6%);
+    border: 0;
+  }
+
+  &.\--size-s { @include btn-size(13,1,5); }
+
+  &.\--size-l {
+    @include btn-size(18,1,15);
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+
+  &.\--size-xl { @include btn-size(18,1.5,15); }
+
+  // &.\--color-secondary {  }
+
+  // &.\--color-tertiary {  }
+}

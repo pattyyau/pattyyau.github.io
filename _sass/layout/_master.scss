@@ -1,0 +1,12 @@
+.content {
+  //@include clearfix;
+  margin: 0 30px;
+  // @include bp(s) {
+  //   width: 85%;
+  //   margin: 0 auto;
+  // }
+  @include bp(m) {
+    width: 75%;
+    margin: 0 auto;
+  }
+}

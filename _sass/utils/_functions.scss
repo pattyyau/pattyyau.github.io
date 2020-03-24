@@ -1,0 +1,94 @@
+/*------------------------------------*\
+    #FUNCTIONS
+\*------------------------------------*/
+
+/// Converts pixel value to em
+/// @group helpers
+/// Call with 1-4 parameters; `px` is not required but supported
+/// @example scss - em function
+///   em(10 20 30px 40);
+/// Optionally call with a different base (eg: 8px) to calculate em.
+/// @example scss
+///   em(16 32 4, 8);
+@function em($values, $base-value: $basefont) {
+  $max: length($values);
+
+  @if $max == 1 { @return convert-to-em(nth($values, 1), $base-value); }
+
+  $emValues: ();
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+  }
+  @return $emValues;
+}
+
+
+
+/// Helper to manage `z-index`.
+/// Tries to fetch the z-index mapped to `$layer` in `$z-indexes` map.
+/// If found, returns it, else returns `null`.
+/// @requires {variable} z-indexes
+/// @example scss
+/// z-index: z("default")
+/// @param {String} $layer - Layer
+/// @throws No z-index found for `$layer`.
+/// @return {Number | Null}
+@function z($layer) {
+  @if not map-has-key($z-indexes, $layer) {
+    @warn 'No z-index found for `#{$layer}`.';
+  }
+
+  @return map-get($z-indexes, $layer);
+}
+
+
+
+/// Creates optimized svg url
+@function encode($svg){
+  // Chunk up string in order to avoid "stack level too deep" error
+  $encoded:'';
+  $slice: 2000;
+  $index: 0;
+  $loops: ceil(str-length($svg)/$slice);
+  @for $i from 1 through $loops {
+    $chunk: str-slice($svg, $index, $index + $slice - 1);
+    // Encode (may need a few extra replacements)
+    $chunk: str-replace($chunk,'"','%22');
+    $chunk: str-replace($chunk,'<','%3C');
+    $chunk: str-replace($chunk,'>','%3E');
+    $chunk: str-replace($chunk,'&','%26');
+    $chunk: str-replace($chunk,'#','%23');
+    $chunk: str-replace($chunk,'=','%3D');
+    $chunk: str-replace($chunk,':','%3A');
+    $chunk: str-replace($chunk,' ','%20');
+    $encoded: #{$encoded}#{$chunk};
+    $index: $index + $slice;
+  }
+  @return url("data:image/svg+xml;charset=utf-8,#{$encoded}");
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #HELPER-FUNCTIONS
+\*----------------------------------------------------------------------------*/
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-em($value, $base-value: $basefont)  {
+  $value: strip-unit($value) / strip-unit($base-value) * 1em;
+  @return $value;
+}
+
+// Helper function to replace characters in a string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(str-slice($string, $index +
+      str-length($search)), $search, $replace);
+  }
+  @return $string;
+}

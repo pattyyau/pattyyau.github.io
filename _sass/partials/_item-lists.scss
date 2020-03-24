@@ -1,0 +1,91 @@
+﻿/*------------------------------------*\
+    #ITEM-LISTS
+\*------------------------------------*/
+
+.works-grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.work {
+  position: relative;
+  display: block;
+  padding: 30px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  transition: all .7s ease;
+  transition-property: filter, background;
+  filter: grayscale(1);
+  &:hover {
+    filter: grayscale(0);
+    background: #f2f2f2;
+    .work__icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+    h2 {
+      color: $accent;
+    }
+  }
+  @include bp(xs) {
+    width: 50%;
+  }
+  @include bp(s) {
+    width: 33.3333%;
+  }
+  @include bp(m) {
+    width: 25%;
+  }
+}
+  .work__icon {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: -25px;
+    padding-top: 12px;
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    background: $accent;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    transform: scale(.85);
+    transition: opacity .7s, transform .5s;
+  }
+  .work__caption {
+    h2 {
+      margin: 20px 0 0;
+      color: #000;
+      font: 16px $paragraph;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 3px;
+      transition: color .5s;
+    }
+  }
+
+
+
+
+.post-list {
+  max-width: 600px;
+  margin: 0 auto $baseline;
+  p {
+    margin-bottom: .25em;
+  }
+  .date {
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    font-size: em(14);
+  }
+  .tag-list { display: inline-block; margin-top: 0; }
+}

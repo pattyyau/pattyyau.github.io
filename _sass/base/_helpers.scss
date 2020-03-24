@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #HELPERS
+\*------------------------------------*/
+
+.-fl-l { float: left !important; }
+.-fl-r { float: right !important; }
+.-ta-l { text-align: left !important; }
+.-ta-r { text-align: right !important; }
+.-ta-c { text-align: center !important; }
+.-ta-j { text-align: justify !important; }
+
+.rtl        { direction: rtl; text-align:right; }
+.-hide      { display: none !important; }
+.-ws-nowrap { white-space: nowrap; }
+.-overflow  { overflow: hidden; }
+.-cf        { @include clearfix; }
+.-clr       { clear: both; }
+.-mt-0 { margin-top: 0 !important; }
+.-mb-0 { margin-bottom: 0 !important; }
+.-mt-1 { margin-top: $baseline; }
+.-mb-1 { margin-bottom: $baseline; }
+.-fw-700 { font-weight: 700; }
+.-fs-i { font-style: italic; }
+
+
+
+/// A 'highligher' effect used to <mark> search terms and the like.
+.highlight{
+  background: #ffff99;
+  padding: em(0 15 6);
+}
+
+
+
+/// Hide text from the user, but keep it available for screen-readers and SEO.
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}

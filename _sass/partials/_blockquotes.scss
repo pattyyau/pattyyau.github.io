@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #BLOCKQUOTES
+\*------------------------------------*/
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+
+blockquote {
+  margin: em(0 0 $baseline,24);
+  padding: em(12 15 0 12,24);
+  font-size: em(24);
+  line-height: em($baseline*1.5);
+
+  border-left: 1px solid #ccc;
+
+  p:last-of-type {
+    margin-bottom: .5em;
+  }
+
+  cite {
+    display: inline-block;
+    font-size: em(14,24);
+    line-height: em($baseline,24);
+    font-style: normal;
+
+    &:before {
+      content: "\2014 \0020";
+    }
+  }
+}

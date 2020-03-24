@@ -1,0 +1,25 @@
+{% for work in site.data.works %}
+
+  {% if page.url contains work.url %}
+
+    {% assign prev_p = forloop.index0 | minus: 1 %}
+    {% assign next_p = forloop.index0 | plus: 1 %}
+    {% assign total_p = site.data.works | size | minus: 1 %}
+
+    <div class="project-nav">
+
+      {% if prev_p >= 0 %}
+        <a class="prev" href="{{ site.data.works[prev_p].url | prepend: 'work/' | relative_url }}" title="{{ site.data.works[prev_p].title }}">‹</a>
+      {% endif %}
+
+      {% if next_p <= total_p %}
+        <a class="next" href="{{ site.data.works[next_p].url | prepend: 'work/' | relative_url }}" title="{{ site.data.works[next_p].title }}">›</a>
+      {% endif %}
+
+      <h1>{{ page.title }}</h1>
+
+    </div>
+
+  {% endif %}
+
+{% endfor %}

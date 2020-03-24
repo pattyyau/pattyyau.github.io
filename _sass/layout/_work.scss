@@ -1,0 +1,54 @@
+.l-work {
+  h1 {
+    margin-top: 8px;
+  }
+  p {
+    max-width: 600px;
+    margin: 0 auto $baseline;
+  }
+  figure {
+    margin: 0 auto $baseline;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    img {
+      display: inline-block;
+      border-radius: 4px;
+      transition: background 0.8s;
+      box-shadow: 0 12px 27px 3px rgba(0,0,0,.15);
+      &:hover {
+        background: #f8f8f8;
+      }
+      &.\--no-shadow {
+        box-shadow: none;
+      }
+    }
+  }
+  .gotolive {
+    text-align: center;
+    border-bottom: 1px dotted #999;
+  }
+}
+
+.project-nav {
+  overflow: hidden;
+  max-width: 600px;
+  padding: $baseline 0;
+  margin: 0 auto;
+  .prev,
+  .next {
+    width: 50px;
+    background: #f2f2f2;
+    border-radius: 25px;
+    color: $accent;
+    padding: 4px 20px 10px;
+    font-size: 2em;
+    transition: all .35s;
+    &:hover {
+      background: $accent;
+      color: #fff;
+    }
+  }
+  .prev { float: left; }
+  .next { float: right; }
+}

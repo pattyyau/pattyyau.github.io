@@ -1,0 +1,157 @@
+/*------------------------------------*\
+    #TABLES
+\*------------------------------------*/
+
+/// Apply pretty table styles with class .table
+@mixin table ($zebra:true,$linecolor:#aaa,$stripecolor:#ccc) {
+  margin-bottom: em($baseline);
+  background: #fff;
+  box-shadow: 0 0 0 1px $linecolor;
+
+  caption {
+    font-size: em(18);
+    line-height: em($baseline,18);
+    margin-top: em($baseline,18);
+    text-align: left;
+  }
+
+  thead,
+  tbody,
+  tfoot { vertical-align: top; }
+
+  thead,
+  tfoot {
+    font-weight: 700;
+    text-align: left;
+  }
+
+    @if $zebra {
+      tr:nth-of-type(even) { background: $stripecolor; }
+    }
+
+      th,
+      td {
+        display: table-cell;
+        font-size: em(14);
+        line-height: em($baseline,14);
+        padding: em(7 10,14);
+
+        .btn { margin: 0; }
+      }
+
+  thead {
+    th {
+      font: em(15) $heading;
+      color: $accent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid $linecolor;
+    }
+  }
+
+  tbody {
+
+    tr:hover{
+      background: #ddd;
+      @include transition(background,.5s,linear);
+    }
+  }
+
+  tfoot {
+    tr { border-top: 1px solid $linecolor; }
+  }
+}
+
+
+.table{
+  @include table;
+  width: 100%;
+}
+
+
+
+// $resptable: 700px;
+// .table-wrapper {
+//     position: relative;
+//     margin-bottom: 20px;
+//     overflow: hidden;
+//     border-right: 1px solid $ltgray;
+
+//     .table td,
+//     .table th {
+//       padding: 9px 10px;
+//       text-align: left;
+//     }
+
+
+//     .scrollable,
+//     .pinned {
+//       border-top: 1px solid $ltgray;
+//       border-bottom: 1px solid $ltgray;
+//     }
+
+//     .scrollable {
+//       margin-left: 35%;
+//       overflow-x: scroll;
+//       overflow-y: hidden;
+
+//       @include susy-media($resptable) {
+//         overflow-x: auto;
+//         overflow-y: auto;
+//         margin-left: 0;
+//       }
+//     }
+
+//     .pinned {
+//       position: absolute;
+//       left: 0;
+//       top: 0;
+//       bottom: 0;
+//       background: #fff;
+//       width: 35%;
+//       overflow-y: hidden;
+//       overflow-x: scroll;
+//       border-left:  1px solid $ltgray;
+
+//       @include susy-media($resptable) { display: none; }
+
+//       table {
+//         border-right: none;
+//         border-left: none;
+//         width: 100%;
+//         height: 100%;
+//         margin-bottom: 0;
+
+//         th,
+//         td { white-space: nowrap; }
+
+//         td:last-child { border-bottom: 0; }
+//       }
+//     }
+// }
+
+//   .table.responsive {
+//     margin-bottom: 0;
+//     @include susy-media($resptable) { margin-bottom: em($baseline); }
+
+//     td,
+//     th {
+//       position: relative;
+//       white-space: nowrap;
+//       overflow: hidden;
+//       @include susy-media($resptable) {
+//         white-space: normal;
+//         overflow: auto;
+//       }
+//     }
+
+//     th:first-child,
+//     td:first-child,
+//     td:first-child,
+//     &.pinned td {
+//       display: none;
+//       @include susy-media($resptable) {
+//         display: table-cell;
+//       }
+//     }
+//   }
