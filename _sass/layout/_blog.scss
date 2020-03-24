@@ -1,0 +1,31 @@
+.article {
+  margin: 0 30px;
+  @include bp(s) {
+    width: 75%;
+    margin: 0 auto;
+  }
+  @include bp(m) {
+    width: 50%;
+  }
+  figure {
+    margin: $baseline*1.5 auto;
+    text-align: center;
+    img {
+      display: inline-block;
+    }
+    figcaption {
+       margin: em($baseline*.5 0,14);
+       font-size: em(14);
+       font-style: italic;
+       line-height: em($baseline,14);
+       opacity: .8;
+    }
+    pre {
+      margin-bottom: 0;
+      white-space: normal;
+      text-align: left;
+      code { font-size: em(15); }
+    }
+  }
+
+}

@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+a {
+  font-weight: 400;
+  line-height: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+  }
+
+  &:hover { cursor: pointer; }
+
+  //&:focus { outline: thin dotted; }
+
+  img { border: none; }
+
+}
+
+
+p a,
+li a {
+  color: #000;
+  border-bottom: 1px solid $accent;
+
+  &:hover,
+  &:focus {
+    border-bottom-width: 2px;
+  }
+}

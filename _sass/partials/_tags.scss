@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #TAGS
+\*------------------------------------*/
+
+.tag-list{
+  margin: em($baseline,14) 0;
+  font-size: em(14);
+  line-height: em($baseline,14);
+
+  &:before{
+    padding-right: em(5,14);
+    color: #aaa;
+    content: '#';
+  }
+
+  .tag {
+    position: relative;
+    display: inline-block;
+    margin-right: .5em;
+
+    &:after {
+      font-size: em(16);
+      line-height: em($baseline);
+      content: ',';
+    }
+
+    &:last-of-type:after { display: none; }
+
+  }
+}

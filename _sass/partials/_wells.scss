@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    #WELLS
+\*------------------------------------*/
+
+/**
+ * A white box with gray border.
+ */
+
+.well {
+  @include clearfix;
+  margin-bottom: em($baseline);
+  padding: em($baseline);
+
+  &.\--error {
+    background: #fff6f6;
+    border-color: $red;
+  }
+
+  &.\--notice {
+
+  }
+
+  &.\--success {
+
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 0;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+}

@@ -1,0 +1,192 @@
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+
+  small {
+    font-size: 60%;
+    line-height: 0;
+  }
+}
+
+
+h1 {
+  margin-top: em($baseline*2,48);
+  margin-bottom: em($baseline,48);
+  font-size: em(48);
+  font-weight: 300;
+  line-height: em($baseline*1.5,48);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+h2 {
+  margin-top:    em($baseline*2,$h2-font-size);
+  margin-bottom: em($baseline*.5,$h2-font-size);
+  font-size:     em($h2-font-size);
+  line-height:   em($baseline*1.5,$h2-font-size);
+}
+
+
+h3 {
+  margin-top:    em($baseline*1.5,$h3-font-size);
+  margin-bottom: em($baseline*.5,$h3-font-size);
+  font-size:     em($h3-font-size);
+  line-height:   em($baseline*1.5,$h3-font-size);
+}
+
+
+h4 {
+  margin-top:    em($baseline,$h4-font-size);
+  margin-bottom: em($baseline,$h4-font-size);
+  font-size:     em($h4-font-size);
+  line-height:   em(30,$h4-font-size);
+}
+
+
+h5 {
+  margin-top:    em($baseline,$h5-font-size);
+  margin-bottom: em($baseline,$h5-font-size);
+  font-size:     em($h5-font-size);
+  line-height:   em($baseline,$h5-font-size);
+  font-weight: 700;
+}
+
+
+h6 {
+  margin-top:    em($baseline,$h6-font-size);
+  margin-bottom: em($baseline,$h6-font-size);
+  font-size:     em($h6-font-size);
+  line-height:   em($baseline,$h6-font-size);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+p,
+pre {
+  margin: 0 0 em($baseline);
+}
+
+p {
+  font-family: $paragraph;
+  font-weight: 400;
+  font-size: em(16);
+  line-height: 1.5;
+  //text-rendering: optimizeLegibility;
+
+  &.lead {
+    font-size: em(24);
+    line-height: em($baseline*1.5,24);
+    margin-top: em(24,24);
+    margin-bottom: em(24,24);
+  }
+}
+
+
+hr {
+  clear: both;
+  box-sizing: content-box;
+  margin: em($baseline) 0;
+  height: 3px;
+  border: none;
+}
+
+
+/// This creates a visual style where a word is overlapping a horizontal line.
+/// @example html
+///   <div class="text-divider"><span>Or</span></div>
+.text-divider {
+  display: block;
+  margin: em($baseline 0);
+  text-align: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    margin-top: -2px;
+    z-index: -1;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0 .5em;
+    text-transform: uppercase;
+    background: #fff;
+  }
+}
+
+
+address {
+  font-style: normal;
+}
+
+
+em {
+  font-style: italic;
+  line-height: inherit;
+}
+
+i {
+  font-style: normal;
+  line-height: inherit;
+}
+
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit;
+}
+
+.underline { text-decoration: underline; }
+
+small {
+  font-size: 80%;
+  line-height: inherit;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: #333;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+
+abbr { text-transform: none; }
+
+dfn { font-style: italic; }
+
+// mark {
+//   background: #fffca0;
+//   padding: 0 .2em;
+//   color: #000;
+// }

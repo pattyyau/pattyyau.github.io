@@ -1,0 +1,27 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 100%; // em to 16px
+  line-height: $baseline;
+}
+
+
+body {
+  color: #222;
+  font: 1em $paragraph;
+}
+
+header,
+footer,
+nav,
+main,
+section,
+div { position: relative; }
+
+
+wbr:after { content: "\00200B"; }

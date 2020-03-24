@@ -1,0 +1,98 @@
+﻿/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+dl,
+menu,
+ol,
+ul {
+  margin: em($baseline*.5) 0;
+  list-style-position: outside;
+  font-family: $paragraph;
+}
+
+dl {
+  dt {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  dd {
+    margin-bottom: em($baseline*.5);
+    margin-left: em(30);
+    line-height: 1.5;
+  }
+}
+
+
+header ul,
+footer ul,
+nav ul { margin: 0; }
+
+
+ol,
+ul {
+  padding: 0;
+
+  ul,
+  ol {
+    margin: 0 0 0 em(20);
+  }
+}
+
+ol { margin-left: 2em; }
+
+ul {
+  list-style: none;
+  margin-left: 0;
+
+  &.\--bordered {
+    > li {
+      padding-bottom: em($baseline*.5);
+      border-bottom: 1px solid #d5d5d5;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: none;
+      }
+    }
+  }
+
+  &.\--bullet-list {
+    margin-left: em(20);
+    margin-bottom: em($baseline);
+    list-style-type: disc;
+
+    ul {
+      margin-bottom: 0;
+      list-style-type: circle;
+    }
+  }
+
+  &.\--check-list {
+    > li {
+      position: relative;
+      margin-left: em(30);
+      margin-bottom: em($baseline*.5);
+
+      &:before {
+        position: absolute;
+        top: 3px;
+        left: -26px;
+        width: 9px;
+        height: 14px;
+        background: transparent;
+        border-right: 3px solid $accent;
+        border-bottom: 3px solid $accent;
+        border-radius: 0;
+        content: '';
+        transform: rotate(40deg);
+        transform-origin: 100% 100%;
+      }
+
+      h2,
+      h3,
+      h4 { clear: none; }
+    }
+  }
+}

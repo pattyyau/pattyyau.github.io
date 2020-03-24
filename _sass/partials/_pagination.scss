@@ -1,0 +1,73 @@
+/*------------------------------------*\
+    #PAGINATION
+\*------------------------------------*/
+
+.pagination {
+  display: block;
+  margin-left: em(-5);
+  margin-bottom: em($baseline*1.5);
+  margin-top: em($baseline*.5);
+  clear: both;
+  @include clearfix;
+
+  li {
+    float: left;
+    display: block;
+    height: em(24);
+    margin-left: em(5);
+    font-size: em(14);
+    line-height: em($baseline,14);
+
+    &:hover a,
+    a:focus { background: lighten($accent,6%); }
+
+    &.is-unavailable {
+
+      > a,
+      > span {
+        cursor: default;
+        color: #aaa;
+        background: transparent;
+      }
+
+      &:hover a,
+      & a:focus {
+        background: transparent;
+        text-decoration: none;
+      }
+    }
+
+    &.is-current {
+      background: $accent;
+      color: #fff;
+      cursor: default;
+      border-radius: $radius;
+
+      &:hover,
+      &:focus { background: $accent; }
+
+      > a,
+      > span {
+        background: $accent;
+        color: #fff;
+        cursor: default;
+
+        &:hover,
+        &:focus {
+          background: $accent;
+          text-decoration: none;
+        }
+      }
+    }
+
+    > a,
+    > span {
+      display: block;
+      padding: 0 em(8);
+      color: $accent;
+      border-radius: $radius;
+    }
+
+  }
+}
+

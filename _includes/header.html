@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3d2da"/>
+  <meta name="description" content="Patty Yau Portfolio">
+  <link rel="canonical" href="{{ site.url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/img/icons/favicon.png' | relative_url }}" sizes="16x16">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | relative_url }}" media="screen">
+</head>
+<body class="l-{{ page.layout }} {{layout.class}}"{% if page.id %} id="p-{{ page.id }}"{% endif %}>
+
+  <header class="header" role="banner">
+    <div class="content">
+      <div class="header__logo">
+        <a class="logo" href="{{ '/' | relative_url }}" rel="home">
+          <img src="{{ '/assets/img/logos/py.svg' | relative_url }}" alt="Logo">
+        </a>
+      </div>
+      <nav class="header__nav" role="navigation">
+        {% include nav.html %}
+      </nav>
+    </div>
+  </header>

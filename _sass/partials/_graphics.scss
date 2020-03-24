@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    #GRAPHICS
+\*------------------------------------*/
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+.icon {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+  vertical-align: top;
+	fill: currentColor;
+}
+
+
+.avatar {
+  margin: 20px auto 40px;
+  width: 250px;
+  border-radius: 50%;
+}
