@@ -24,14 +24,6 @@
 
 
 
-/// A 'highligher' effect used to <mark> search terms and the like.
-.highlight{
-  background: #ffff99;
-  padding: em(0 15 6);
-}
-
-
-
 /// Hide text from the user, but keep it available for screen-readers and SEO.
 .visuallyhidden {
   position: absolute;

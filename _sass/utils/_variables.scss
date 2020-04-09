@@ -75,6 +75,7 @@ $pink: #f3d2da;
 /// Accent color
 /// @type Color
 $accent: #33bab4;
+$accent-h: lighten($accent,6%);
 
 $green: #75bf42 !default;
 $cyan: #41a8d3 !default;

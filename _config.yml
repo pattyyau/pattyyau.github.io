@@ -18,9 +18,11 @@ github_username:  pattyyau
 permalink: /blog/:title/
 excerpt_separator: <!--more-->
 timezone: America/Los_Angeles
+theme: null
+markdown: kramdown
 plugins:
- - jekyll-feed
- - jekyll-paginate
+# - jekyll-feed
+# - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -41,3 +43,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - Gruntfile
+  - package.json
+  - package-lock.json

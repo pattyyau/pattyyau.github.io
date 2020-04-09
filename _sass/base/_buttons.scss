@@ -38,9 +38,11 @@
   &:hover,
   &:focus {
     color: #fff;
-    background: lighten($accent,6%);
+    background: $accent-h;
     border: 0;
   }
+
+  &:after { display: none !important; }
 
   &.\--size-s { @include btn-size(13,1,5); }
 

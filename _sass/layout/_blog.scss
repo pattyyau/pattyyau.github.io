@@ -7,24 +7,50 @@
   @include bp(m) {
     width: 50%;
   }
-  figure {
-    margin: $baseline*1.5 auto;
+
+  .date {
+    display: block;
+    margin-bottom: em($baseline);
+    color: #7d9493;
     text-align: center;
-    img {
-      display: inline-block;
+    text-transform: uppercase;
+    &:before,
+    &:after {
+      padding: 0 5px;
+      content: '\2014';
     }
+  }
+
+  ul,
+  ol {
+    margin-bottom: em($baseline);
+    li { margin-bottom: em($baseline*.5); }
+  }
+
+  ul {
+    margin-left: em(20);
+    list-style-type: disc;
+    ul {
+      margin-top: em($baseline*.25);
+      margin-bottom: 0;
+      list-style-type: circle;
+      ul { list-style-type: square; }
+      li { margin-bottom: em($baseline*.25); }
+    }
+  }
+
+  figure {
+    margin: em($baseline*1.5) auto;
+    text-align: center;
+
+    img { display: inline-block; }
+
     figcaption {
        margin: em($baseline*.5 0,14);
        font-size: em(14);
        font-style: italic;
        line-height: em($baseline,14);
        opacity: .8;
-    }
-    pre {
-      margin-bottom: 0;
-      white-space: normal;
-      text-align: left;
-      code { font-size: em(15); }
     }
   }
 

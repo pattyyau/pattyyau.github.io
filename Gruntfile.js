@@ -76,7 +76,7 @@
 
     shell: {
       jekyllBuild: {
-        command: 'jekyll build'
+        command: 'bundle exec jekyll build'
       },
       jekyllServe: {
         command: 'bundle exec jekyll serve'
@@ -85,6 +85,9 @@
 
     // run tasks in parallel
     concurrent: {
+      build: [
+        ['sass', 'postcss', 'uglify'],'shell:jekyllBuild'
+      ],
       serve: [
         ['sass', 'postcss', 'uglify'],'watch','shell:jekyllServe'
       ],
@@ -98,5 +101,5 @@
   grunt.registerTask('default', ['sass:main', 'postcss:main']);
   grunt.registerTask('js', ['uglify:app']);
   grunt.registerTask('serve', ['concurrent:serve']);
-
+  grunt.registerTask('build', ['concurrent:build']);
 };

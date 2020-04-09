@@ -22,11 +22,26 @@ a {
 
 p a,
 li a {
+  position: relative;
   color: #000;
   border-bottom: 1px solid $accent;
+  transition: border-bottom-color .2s;
 
   &:hover,
   &:focus {
-    border-bottom-width: 2px;
+    border-bottom-color: (rgba($accent, .4));
+    &:after { width: 100%; }
+  }
+
+  &:after {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    opacity: .35;
+    border-bottom: 10px solid $accent;
+    content: '';
+    transition: width .3s;
   }
 }

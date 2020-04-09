@@ -58,17 +58,6 @@ ul {
     }
   }
 
-  &.\--bullet-list {
-    margin-left: em(20);
-    margin-bottom: em($baseline);
-    list-style-type: disc;
-
-    ul {
-      margin-bottom: 0;
-      list-style-type: circle;
-    }
-  }
-
   &.\--check-list {
     > li {
       position: relative;
