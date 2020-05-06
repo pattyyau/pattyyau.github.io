@@ -4,7 +4,7 @@ layout: work
 tags: [mobile]
 ---
 
-Worked on the design and prototype
+Worked on the design and prototype. **[View Case Study](/blog/case-study-myota-app-pt-1/)**
 
 **Tools:** Photoshop, Invision
 

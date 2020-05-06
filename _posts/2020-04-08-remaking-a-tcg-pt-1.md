@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Remaking a TCG pt. 1"
-date:   2020-04-09
+date:   2020-04-08
 tags: [jekyll]
 ---
 
@@ -87,7 +87,7 @@ Let's break it down. I essentially have one massive data file that I am applying
 
 My first attempt was to create a `.yml` file for each TCG in the `_data` folder. However, in order to create individual pages from each of those, I'd still have to create an `.md` for each TCG in order to access the custom data, which would defeat the purpose of a dynamic project. The closest solution I found was a plugin called [jekyll-data-page_gen](https://github.com/avillafiorita/jekyll-datapage_gen), but unfortunately it's not supported by Github Pages.
 
-Next I looked into Jekyll's Collections. I moved all the data into the page's Front Matter in a folder called `_tcg`, which I then placed into a collection in the `_config.yml`. I then scoped the collection to different layouts and permalinks to create the subpages. Since they were grabbing from the same collection, only the last defined values were being used. The fix was creating **Symbolic Links** for each subfolder (`_collecting`, `_trading`, etc) pointing to `_tcg` and creating a collection for each.
+Next I looked into Jekyll's Collections. I moved all the data into the page's Front Matter in a folder called `_tcg`, which I then placed into a collection in the `_config.yml`. I then scoped the collection to different layouts and permalinks to create the subpages. Since they were grabbing from the same collection, only the last defined values were being used. The fix was creating [Symbolic Links](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink) for each subfolder (`_collecting`, `_trading`, etc) pointing to `_tcg` and creating a collection for each.
 
 Run Command Prompt as Administrator:
 
